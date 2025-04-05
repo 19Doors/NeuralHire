@@ -26,7 +26,7 @@ import { FolderX } from "lucide-react";
 import { useJobStore } from "@/store/store";
 import DBB from "./table";
 
-export default async function Dashboard() {
+export default function Dashboard() {
   return (
     <div className="">
       <DBB />
