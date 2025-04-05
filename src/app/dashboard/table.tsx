@@ -30,9 +30,12 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import axios from "axios";
 
 export default async function DBB() {
-  let jobSummariesJSON: any="";
+  let jobSummariesJSON: any;
+  console.log(jobSummariesJSON)
   const fetchSummaries = async () => {
     let jobSummaries = await fetch("http://13.233.146.66:5000/api/getJobSummaries");
+    // let jobSummaries = await fetch("http://127.0.0.1:5000/api/getJobSummaries");
+      console.log(jobSummaries);
     try {
       jobSummariesJSON = await jobSummaries.json();
     } catch (e) {
