@@ -152,7 +152,7 @@ export default function DBB() {
       <div className="flex flex-col w-full ">
         <div className="h-1/2 w-full border p-4 flex">
           <JobAction />
-          <Button className="ml-2" onClick={fetchSummaries}>
+          <Button className="ml-2" onClick={async ()=> await fetchSummaries}>
             Reload Summaries
           </Button>
         </div>
