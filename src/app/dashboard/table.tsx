@@ -27,12 +27,12 @@ import { useJobStore, useUpdateCheck } from "@/store/store";
 import { useCallback, useEffect } from "react";
 import { DialogTrigger } from "@radix-ui/react-dialog";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import axios from "axios";
 
 export default async function DBB() {
-  let url = "http://13.233.146.66/"
-  let jobSummariesJSON: any;
+  let jobSummariesJSON: any="";
   const fetchSummaries = async () => {
-    let jobSummaries = await fetch("http://13.233.146.66/api/getJobSummaries");
+    let jobSummaries = await fetch("http://13.233.146.66:5000/api/getJobSummaries");
     try {
       jobSummariesJSON = await jobSummaries.json();
     } catch (e) {
