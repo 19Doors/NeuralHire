@@ -21,28 +21,24 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { JobAction } from "../components";
+import { CandidateRDrop, JobAction, Logs, Recruit } from "../components";
 import { FolderX } from "lucide-react";
+import { useJobStore, useUpdateCheck } from "@/store/store";
+import { useCallback, useEffect } from "react";
+import { DialogTrigger } from "@radix-ui/react-dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
-export default async function Database() {
-  let jobDescriptions = await fetch(
-    "http://127.0.0.1:5000/api/getJobDescriptions",
-  );
-
-  let jobDescriptionsJSON: any;
-  try {
-    jobDescriptionsJSON = await jobDescriptions.json();
-  } catch (e) {
-    jobDescriptionsJSON = "";
-  }
-  console.log(jobDescriptionsJSON);
-  let jobSummaries = await fetch("http://127.0.0.1:5000/api/getJobSummaries");
-  let jobSummariesJSON;
-  try {
-    jobSummariesJSON = await jobSummaries.json();
-  } catch (e) {
-    jobSummariesJSON = "";
-  }
+export default async function DBB() {
+  let jobSummariesJSON: any;
+  const fetchSummaries = async () => {
+    let jobSummaries = await fetch("http://127.0.0.1:5000/api/getJobSummaries");
+    try {
+      jobSummariesJSON = await jobSummaries.json();
+    } catch (e) {
+      jobSummariesJSON = "";
+    }
+  };
+  await fetchSummaries();
 
   return (
     <div className="flex w-full">
@@ -59,7 +55,7 @@ export default async function Database() {
             </TableRow>
           </TableHeader>
         </Table>
-        <div className="h-screen">
+        <div className="max-h-screen">
           <Table className="w-full border">
             <TableBody>
               {jobSummariesJSON != "" &&
@@ -120,6 +116,10 @@ export default async function Database() {
                                 ))}
                             </div>
                           </div>
+                          <Separator />
+                          <div>
+			    <Recruit jobID={job.jobId}/>
+                          </div>
                         </div>
                       </SheetContent>
                     </Sheet>
@@ -130,20 +130,18 @@ export default async function Database() {
         </div>
         {jobSummariesJSON == "" && (
           <div className="h-[80vh] border w-full flex flex-col justify-center items-center">
-              <FolderX />
-              <p className="text-sm font-medium">
-                No Jobs Found! Begin by adding new jobs.
-              </p>
+            <FolderX />
+            <p className="text-sm font-medium">
+              No Jobs Found! Begin by adding new jobs.
+            </p>
           </div>
         )}
       </div>
       <div className="flex flex-col w-full ">
-        <div className="h-1/2 w-full border p-4">
+        <div className="h-1/2 w-full border p-4 flex">
           <JobAction />
         </div>
-        <div className="h-1/2 w-full border">
-          <p className="text-sm font-bold p-4">Logs</p>
-        </div>
+        <Logs />
       </div>
     </div>
   );

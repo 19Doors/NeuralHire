@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/sonner";
 import {Navbar} from "./components";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
