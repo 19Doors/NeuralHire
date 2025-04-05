@@ -4,6 +4,7 @@ import axios from "axios"
 
 export async function deleteJobSummary(jobID: number) {
   await axios.post('http://13.233.146.66:5000/api/deleteJobSummary', { 'jobID': jobID })
+  // await axios.post('http://127.0.0.1:5000/api/deleteJobSummary', { 'jobID': jobID })
 }
 
 export async function addJobJSON(jobs: any) {

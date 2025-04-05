@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -24,22 +25,31 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CandidateRDrop, JobAction, Logs, Recruit } from "../components";
 import { FolderX } from "lucide-react";
 import { useJobStore, useUpdateCheck } from "@/store/store";
-import { useCallback, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { DialogTrigger } from "@radix-ui/react-dialog";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
-export default async function DBB() {
-  let jobSummariesJSON: any;
+export default function DBB() {
+  const [jobSummariesJSON, setJobSummariesJSON] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
   const fetchSummaries = async () => {
-    // let jobSummaries = await fetch("http://127.0.0.1:5000/api/getJobSummaries");
-    let jobSummaries = await fetch("http://13.233.146.66:5000/api/getJobSummaries");
     try {
-      jobSummariesJSON = await jobSummaries.json();
+      const res = await fetch("http://13.233.146.66:5000/api/getJobSummaries");
+      // const res = await fetch("http://127.0.0.1:5000/api/getJobSummaries");
+      const data = await res.json();
+      setJobSummariesJSON(data);
     } catch (e) {
-      jobSummariesJSON = "";
+      console.error("Failed to load job summaries", e);
+      setJobSummariesJSON([]);
+    } finally {
+      setLoading(false);
     }
   };
-  await fetchSummaries();
+
+  useEffect(() => {
+    fetchSummaries();
+  }, []);
 
   return (
     <div className="flex w-full">
@@ -59,7 +69,7 @@ export default async function DBB() {
         <div className="max-h-screen">
           <Table className="w-full border">
             <TableBody>
-              {jobSummariesJSON != "" &&
+              {jobSummariesJSON.length != 0 &&
                 jobSummariesJSON.map((job: any, id: number): any => {
                   return (
                     <Sheet key={id}>
@@ -119,7 +129,7 @@ export default async function DBB() {
                           </div>
                           <Separator />
                           <div>
-			    <Recruit jobID={job.jobId}/>
+                            <Recruit jobID={job.jobId} />
                           </div>
                         </div>
                       </SheetContent>
@@ -129,7 +139,7 @@ export default async function DBB() {
             </TableBody>
           </Table>
         </div>
-        {jobSummariesJSON == "" && (
+        {jobSummariesJSON.length == 0 && (
           <div className="h-[80vh] border w-full flex flex-col justify-center items-center">
             <FolderX />
             <p className="text-sm font-medium">
@@ -141,6 +151,9 @@ export default async function DBB() {
       <div className="flex flex-col w-full ">
         <div className="h-1/2 w-full border p-4 flex">
           <JobAction />
+          <Button className="ml-2" onClick={fetchSummaries}>
+            Reload Summaries
+          </Button>
         </div>
         <Logs />
       </div>
