@@ -28,6 +28,7 @@ import { useJobStore, useUpdateCheck } from "@/store/store";
 import { useCallback, useEffect, useState } from "react";
 import { DialogTrigger } from "@radix-ui/react-dialog";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import axios from "axios";
 
 export default function DBB() {
   const [jobSummariesJSON, setJobSummariesJSON] = useState<any[]>([]);
@@ -35,9 +36,9 @@ export default function DBB() {
 
   const fetchSummaries = async () => {
     try {
-      const res = await fetch("http://13.233.146.66:5000/api/getJobSummaries");
+      const res = await axios.get("http://13.233.146.66:5000/api/getJobSummaries");
       // const res = await fetch("http://127.0.0.1:5000/api/getJobSummaries");
-      const data = await res.json();
+      const data = await res.data.json();
       setJobSummariesJSON(data);
     } catch (e) {
       console.error("Failed to load job summaries", e);
