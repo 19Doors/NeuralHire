@@ -38,7 +38,7 @@ export default function DBB() {
     try {
       const res = await axios.get("http://13.233.146.66:5000/api/getJobSummaries");
       // const res = await fetch("http://127.0.0.1:5000/api/getJobSummaries");
-      const data = await res.data.json();
+      const data = await res.data;
       setJobSummariesJSON(data);
     } catch (e) {
       console.error("Failed to load job summaries", e);
@@ -152,7 +152,7 @@ export default function DBB() {
       <div className="flex flex-col w-full ">
         <div className="h-1/2 w-full border p-4 flex">
           <JobAction />
-          <Button className="ml-2" onClick={async ()=> await fetchSummaries}>
+          <Button className="ml-2" onClick={()=> fetchSummaries()}>
             Reload Summaries
           </Button>
         </div>
