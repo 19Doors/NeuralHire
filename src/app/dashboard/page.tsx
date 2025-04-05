@@ -13,7 +13,9 @@ import { FileMinus2, FilePlus2 } from "lucide-react";
 import DBB from "./table";
 
 export default function Dashboard() {
-  return(
-    <DBB />
-  )
+  return (
+    <div className="">
+      <DBB />
+    </div>
+  );
 }

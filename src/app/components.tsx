@@ -247,7 +247,7 @@ export function Logs() {
   );
 }
 
-function JobAction() {
+function JobAction({js}:any) {
   let [deleteJobId, setDeleteJobId] = useState(-1);
   let jobsToBeAdded: any = null;
   let [jobsToBeAddedJSON, setJobsToBeAddedJSON] = useState("");
@@ -265,6 +265,7 @@ function JobAction() {
       await deleteJobSummary(deleteJobId);
       uc.setUC();
       logState.addLog("Job Deletion: Jobs deleted Successfully");
+      js();
     } catch (e: any) {
       console.error(e);
     }
@@ -278,6 +279,7 @@ function JobAction() {
       await addJobJSON(JSON.parse(jobsToBeAddedJSON));
       logState.addLog("Job Addition: Jobs Added Successfully");
       uc.setUC();
+      js();
     } catch (e: any) {
       logState.addLog("Job Addition: Incorrect JSON Syntax");
     }
@@ -289,6 +291,7 @@ function JobAction() {
       await addJobCSV(jobsToBeAddedCSV);
       logState.addLog("Job Addition: Jobs Added Successfully");
       uc.setUC();
+      js();
     } catch (e: any) {
       logState.addLog("Job Addition: Incorrect JSON Syntax");
     }
