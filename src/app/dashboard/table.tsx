@@ -32,7 +32,7 @@ export default async function DBB() {
   let url = "http://13.233.146.66/"
   let jobSummariesJSON: any;
   const fetchSummaries = async () => {
-    let jobSummaries = await fetch(url+"api/getJobSummaries");
+    let jobSummaries = await fetch("http://13.233.146.66/api/getJobSummaries");
     try {
       jobSummariesJSON = await jobSummaries.json();
     } catch (e) {
