@@ -31,7 +31,8 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 export default async function DBB() {
   let jobSummariesJSON: any;
   const fetchSummaries = async () => {
-    let jobSummaries = await fetch("http://127.0.0.1:5000/api/getJobSummaries");
+    // let jobSummaries = await fetch("http://127.0.0.1:5000/api/getJobSummaries");
+    let jobSummaries = await fetch("http://13.233.146.66:5000/api/getJobSummaries");
     try {
       jobSummariesJSON = await jobSummaries.json();
     } catch (e) {
