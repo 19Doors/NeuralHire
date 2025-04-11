@@ -14,6 +14,7 @@
   --font-firaSC: "Fira Sans Condensed", sans-serif;
   --font-barlowC: "Barlow Condensed", sans-serif;
   --font-inter: "Intern", sans-serif;
+  --font-founders: "Founders Grotesk", sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -145,4 +146,108 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@font-face {
+  font-family: 'Founders Grotesk XCond';
+  src: url('/fonts/FoundersGroteskXCond-Lt.woff2') format('woff2');
+  font-weight: 300; /* Light */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Founders Grotesk XCond';
+  src: url('/fonts/FoundersGroteskXCond-Bold.woff2') format('woff2');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  src: url('/fonts/FoundersGrotesk-SemiboldItalic.woff2') format('woff2');
+  font-weight: 600; /* Semibold Italic */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  src: url('/fonts/FoundersGrotesk-Semibold.woff2') format('woff2');
+  font-weight: 600; /* Semibold */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  src: url('/fonts/FoundersGrotesk-RegularItalic.woff2') format('woff2');
+  font-weight: 400; /* Regular Italic */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  src: url('/fonts/FoundersGrotesk-Regular.woff2') format('woff2');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  src: url('/fonts/FoundersGrotesk-MediumItalic.woff2') format('woff2');
+  font-weight: 500; /* Medium Italic */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  src: url('/fonts/FoundersGrotesk-Medium.woff2') format('woff2');
+  font-weight: 500; /* Medium */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  src: url('/fonts/FoundersGrotesk-LightItalic.woff2') format('woff2');
+  font-weight: 300; /* Light Italic */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  src: url('/fonts/FoundersGrotesk-Light.woff2') format('woff2');
+  font-weight: 300; /* Light */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Founders Grotesk Cond';
+  src: url('/fonts/FoundersGroteskCond-Lt.woff2') format('woff2');
+  font-weight: 300; /* Light */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  src: url('/fonts/FoundersGrotesk-BoldItalic.woff2') format('woff2');
+  font-weight: 700; /* Bold Italic */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Founders Grotesk';
+  src: url('/fonts/FoundersGrotesk-Bold.woff2') format('woff2');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+  font-display: swap;
 }

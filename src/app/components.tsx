@@ -449,51 +449,10 @@ function Navbar() {
   const { setTheme } = useTheme();
   const [isDark, setIsDark] = useState(false);
   return (
-    <div className="w-full border-b flex justify-between pb-1">
+    <div className="w-full flex justify-between pb-1 mb-4">
       <Link href="/" legacyBehavior passHref>
-        <p className="font-bold text-xl cursor-pointer pt-1">NeuralHire</p>
+        <p className="font-bold text-2xl cursor-pointer p-1 font-spaceG">NeuralHire</p>
       </Link>
-      <NavigationMenu>
-        <NavigationMenuList>
-          {navigationItems.map((item: NavItem, id: number): any => {
-            return (
-              <NavigationMenuItem key={id} className="">
-                <Link href={item.url} legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    <p className="font-bold">{item.name}</p>
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            );
-          })}
-          <NavigationMenuItem>
-            {isDark == false && (
-              <Button
-                className="cursor-pointer"
-                variant="ghost"
-                onClick={() => {
-                  setTheme("dark");
-                  setIsDark(true);
-                }}
-              >
-                <Moon />
-              </Button>
-            )}
-            {isDark == true && (
-              <Button
-                className="cursor-pointer"
-                variant="ghost"
-                onClick={() => {
-                  setTheme("light");
-                  setIsDark(false);
-                }}
-              >
-                <Sun />
-              </Button>
-            )}
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
     </div>
   );
 }
