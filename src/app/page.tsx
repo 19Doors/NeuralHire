@@ -138,11 +138,11 @@ export default function Home() {
             screening, from JD analysis to interview scheduling.
           </p>
         </div>
-        <motion.button whileTap={{scale:0.8}} className="bg-[#8A78FF] p-4 inset-shadow-xs inset-shadow-black cursor-pointer rounded rounded-lg font-bold text-secondary text-xl">
 	<Link href="/dashboard">
+        <motion.button whileTap={{scale:0.8}} className="bg-[#8A78FF] p-4 inset-shadow-xs inset-shadow-black cursor-pointer rounded rounded-lg font-bold text-secondary text-xl">
           See NeuralHire in Action
-	  </Link>
         </motion.button>
+	  </Link>
         <div>
           <HowItWorks />
         </div>
