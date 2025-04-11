@@ -115,8 +115,8 @@ function Features() {
             variants={featureVariants}
             className="flex flex-col md:flex-row p-4 border gap-x-4 justify-center items-center"
           >
-            <h1 className="md:min-w-1/4 md:border-r font-bold font-spaceG text-3xl lg:text-2xl text-wrap">{feature.heading}</h1>
-            <p className="font-inter text-sm lg:text-xl">{feature.body}</p>
+            <h1 className="md:min-w-1/4 md:border-r font-bold font-spaceG text-3xl lg:text-3xl text-wrap">{feature.heading}</h1>
+            <p className="font-inter text-sm lg:text-lg">{feature.body}</p>
           </motion.div>
         );
       })}
@@ -129,7 +129,7 @@ export default function Home() {
     <div>
       <section className="h-screen flex flex-col items-center w-full gap-y-18">
         <div className="flex flex-col items-center justify-center">
-          <div className="text-3xl lg:text-6xl font-bold font-founders flex gap-x-2">
+          <div className="text-3xl lg:text-6xl font-bold font-founders flex flex-col lg:flex-row gap-x-2">
             <p className="text-[#8A78FF]">Revolutionize</p> Your Recruitment
             Process with AI
           </div>
