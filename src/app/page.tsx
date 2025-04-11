@@ -115,7 +115,7 @@ function Features() {
             variants={featureVariants}
             className="flex flex-col md:flex-row p-4 border gap-x-4 justify-center items-center"
           >
-            <h1 className="md:min-w-1/4 md:border-r font-bold font-spaceG text-3xl lg:text-5xl text-wrap">{feature.heading}</h1>
+            <h1 className="md:min-w-1/4 md:border-r font-bold font-spaceG text-3xl lg:text-2xl text-wrap">{feature.heading}</h1>
             <p className="font-inter text-sm lg:text-xl">{feature.body}</p>
           </motion.div>
         );
