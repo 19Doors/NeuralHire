@@ -131,22 +131,23 @@ NeuralHire automates and optimizes the entire candidate screening workflow, allo
 NeuralHire is built with a modern and robust technology stack, ensuring a fast, scalable, and user-friendly experience.
 
 ### Frontend
-*   **▲ Next.js 15:** A powerful React framework for building performant web applications.
-*   **⚛️ React 19:** For constructing dynamic and interactive user interfaces.
-*   **🟦 TypeScript:** Ensures type safety and improves code quality and maintainability.
-*   **💨 Tailwind CSS 4:** A utility-first CSS framework for rapid and responsive UI development.
-*   **✨ shadcn/ui:** Beautifully designed and accessible UI components built on Radix UI primitives.
-*   **🎬 Framer Motion:** For creating fluid and engaging animations throughout the application.
-*   **🐻 Zustand:** A small, fast, and scalable state-management solution for React.
-*   **📄 pdfjs-dist:** Utilized for efficient and accurate text extraction from PDF resumes.
-*   **📤 react-dropzone:** Provides intuitive drag-and-drop file upload capabilities.
-*   **💡 Lucide React:** A comprehensive collection of customizable open-source icons.
-*   **🔔 Sonner:** For elegant and user-friendly toast notifications.
-*   **🎨 Custom Fonts:** Incorporates Founders Grotesk, Space Grotesk, Inter, Barlow Condensed, and Fira Sans Condensed for a unique and professional aesthetic.
-*   **🌗 next-themes:** Enables seamless dark mode integration for enhanced user experience.
+*   ![Next.js](https://img.shields.io/badge/Next.js-Black?style=for-the-badge&logo=next.js&logoColor=white)
+*   ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+*   ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+*   ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+*   ![Framer Motion](https://img.shields.io/badge/Framer_Motion-000000?style=for-the-badge&logo=framer&logoColor=white)
+*   **Zustand**: A small, fast, and scalable state-management solution for React.
+*   **shadcn/ui**: Beautifully designed and accessible UI components built on Radix UI.
+*   **pdfjs-dist**: Utilized for efficient and accurate text extraction from PDF resumes.
+*   **react-dropzone**: Provides intuitive drag-and-drop file upload capabilities.
+*   **Lucide React**: A comprehensive collection of customizable open-source icons.
+*   **Sonner**: For elegant and user-friendly toast notifications.
+*   **next-themes**: Enables seamless dark mode integration for enhanced user experience.
+*   **Custom Fonts**: Incorporates Founders Grotesk, Space Grotesk, Inter, Barlow Condensed, and Fira Sans Condensed for a unique and professional aesthetic.
 
 ### Backend (External API)
-*   **🐍 Flask (Python):** NeuralHire communicates with a dedicated Flask backend API responsible for all AI processing, data storage, and email automation tasks.
+*   ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+*   ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
 *   **API Endpoint:** `http://13.233.146.66:5000` (Note: This is an external server; ensure it's operational or configure your own.)
 
 ---
@@ -232,3 +233,5 @@ NeuralHire offers a streamlined workflow for managing job requisitions and candi
     *   **Set Match Score:** Specify a minimum match score threshold. Only candidates whose profiles meet or exceed this score will be shortlisted.
     *   **Shortlist:** Click "Shortlist" to initiate the AI-powered matching process. The system will then identify and present a list of suitable candidates.
     *   **Automated Interview Email:** Following shortlisting, you will see the emails of the shortlisted candidates. You can then compose and send personalized interview invitation emails directly from the application, using your recruiting email credentials.
+
+---
